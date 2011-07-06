@@ -5,8 +5,8 @@ module ObjectiveRelease
   describe Release do
     
     context ".update_bundle_version" do
-      
-      let(:test_plist_contents) { <<-EOF
+      let(:sample_plist_file) { fixture_file_path("Test.plist") }
+      let(:sample_plist_contents) { <<-EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -19,7 +19,6 @@ module ObjectiveRelease
 </plist>
 EOF
 }
-
       let(:updated_plist_contents) { <<-EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -33,13 +32,10 @@ EOF
 </plist>
 EOF
 }
-
-      let(:sample_plist_file) { fixture_file_path("Test.plist") }
-
       before do
         FileUtils.rm_rf(sample_plist_file)
         test_file = File.open(sample_plist_file, 'w') do |f|
-          f.write(test_plist_contents)
+          f.write(sample_plist_contents)
         end
       end
      
