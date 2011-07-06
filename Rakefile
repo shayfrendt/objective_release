@@ -14,13 +14,16 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "objective_release"
-  gem.homepage = "http://github.com/shayfrendt/objective_release"
-  gem.license = "MIT"
-  gem.summary = %Q{Deploy your iOS applications with gusto!}
-  gem.description = %Q{ObjectiveRelease gives you nice methods for updating your build version and release notes}
-  gem.email = "shay.frendt@gmail.com"
-  gem.authors = ["shayfrendt"]
+  gem.name          = "objective_release"
+  gem.homepage      = "http://github.com/shayfrendt/objective_release"
+  gem.license       = "MIT"
+  gem.summary       = %Q{Deploy your iOS applications with gusto!}
+  gem.description   = %Q{ObjectiveRelease gives you nice methods for updating your build version and release notes}
+  gem.email         = "shay.frendt@gmail.com"
+  gem.authors       = ["shayfrendt"]
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {spec}/*`.split("\n")
+  gem.require_paths = ["lib"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
