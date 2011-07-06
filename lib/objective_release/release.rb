@@ -9,12 +9,21 @@ module ObjectiveRelease
     end
 
     def update_release_notes(release_notes_file)
-      contents = "foo"
-      export_release_notes(release_notes_file, contents)
+      release_notes = File.read(release_notes_file)
+      
+      version_number = release_notes.split("\n").first
+      new_version_number = increment_version(version_number)
+      
+      last_deployed_sha = release_notes.split("\n")[2].split.first
+      system "git log --since #{last_deployed_sha} --pretty=oneline > /tmp/commit-log.txt"
+      latest_commits = File.read(File.expand_path("/tmp/commit-log.txt"))
+      
+      new_release_notes = latest_commits.insert(0, "v#{new_version_number}")
+      export_release_notes(release_notes_file, new_release_notes)
     end
     
     private
-    
+
     def parse_plist(plist)
       Plist::parse_xml plist
     end

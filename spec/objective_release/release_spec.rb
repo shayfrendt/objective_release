@@ -21,7 +21,7 @@ module ObjectiveRelease
       it "includes the current app version number" do
         release = Release.new
         release.update_release_notes(release_notes_test_file)
-        File.read(release_notes_test_file).should == release_notes_end
+        File.read(release_notes_test_file).should include('v1.43')
       end
     end
     
