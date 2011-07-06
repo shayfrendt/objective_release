@@ -24,7 +24,8 @@ Jeweler::Tasks.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {spec}/*`.split("\n")
   gem.require_paths = ["lib"]
-  # dependencies defined in Gemfile
+  gem.add_runtime_dependency 'plist', ['3.1.0']
+  gem.add_runtime_dependency 'grit', ['2.4.1']
 end
 Jeweler::RubygemsDotOrgTasks.new
 
