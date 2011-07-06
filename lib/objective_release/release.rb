@@ -7,6 +7,11 @@ module ObjectiveRelease
       exported_plist = Plist::Emit.dump(parsed_plist)
       export_plist(plist_file, exported_plist)
     end
+
+    def update_release_notes(release_notes_file)
+      contents = "foo"
+      export_release_notes(release_notes_file, contents)
+    end
     
     private
     
@@ -30,7 +35,13 @@ module ObjectiveRelease
 
     def export_plist(file, contents)
       contents.gsub!("Apple Computer", "Apple")
-      File.open(file, 'w') do |f|
+      File.open(file, 'w+') do |f|
+        f.write contents
+      end
+    end
+
+    def export_release_notes(file, contents)
+      File.open(file, 'w+') do |f|
         f.write contents
       end
     end
