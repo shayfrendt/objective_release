@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{objective_release}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shayfrendt"]
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.email = %q{shay.frendt@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.markdown"
   ]
   s.files = [
     ".document",
@@ -23,11 +23,12 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.markdown",
     "Rakefile",
     "VERSION",
     "lib/objective_release.rb",
     "lib/objective_release/release.rb",
+    "objective_release.gemspec",
     "spec/fixtures/Config-End.plist",
     "spec/fixtures/Config-Start.plist",
     "spec/fixtures/Config-Test.plist",
