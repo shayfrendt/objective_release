@@ -8,6 +8,8 @@ module ObjectiveRelease
       export_plist(plist_file, exported_plist)
     end
     
+    private
+    
     def parse_plist(plist)
       Plist::parse_xml plist
     end

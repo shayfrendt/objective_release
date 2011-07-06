@@ -44,8 +44,8 @@ EOF
       end
      
       it "increments the minor version by 1" do
-        rel = Release.new
-        rel.update_bundle_version(sample_plist_file)
+        release = Release.new
+        release.update_bundle_version(sample_plist_file)
         File.read(sample_plist_file).should == updated_plist_contents
       end
     end
