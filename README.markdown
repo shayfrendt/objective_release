@@ -1,6 +1,6 @@
 ## ObjectiveRelease
 
-As a ruby programmer used to `cap deploy` for deployments, I craved the same simplicity after working on an iOS app for a while and wasting time manually deploying.
+As a ruby programmer used to `cap deploy` for deployments, I want a simple way to deploy the iOS apps I work on.
 
 ObjectiveRelease does two things:
 
