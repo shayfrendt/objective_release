@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    objective_release (0.1.6)
+    objective_release (0.1.7)
       grit (~> 2.4.1)
       plist (~> 3.1.0)
 
