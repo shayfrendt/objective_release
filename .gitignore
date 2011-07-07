@@ -4,4 +4,4 @@ doc
 .bundle
 pkg
 .DS_Store
-
+.rvmrc
