@@ -21,21 +21,23 @@ Install the objective_release gem:
     gem install objective_release
 
 Add a `Rakefile` like the following to your iOS project root:
-    
-    require 'objective_release'
-    
-    namespace :version do
-      desc "Bump version and update release notes"
-      task :bump do
-        basedir = File.join(File.dirname(__FILE__), 'MyApp')
-        config = File.join(basedir, "MyApp-Info.plist")       # Path to the Plist config for your iOS app
-        release_notes = File.join(basedir, "RELEASE_NOTES")   # Create one of these if you don't have one
 
-        release = ObjectiveRelease::Release.new
-        release.update_bundle_version(config)
-        release.update_release_notes(release_notes)
-      end
-    end
+``` ruby
+require 'objective_release'
+
+namespace :version do
+  desc "Bump version and update release notes"
+  task :bump do
+    basedir = File.join(File.dirname(__FILE__), 'MyApp')
+    config = File.join(basedir, "MyApp-Info.plist")       # Path to the Plist config for your iOS app
+    release_notes = File.join(basedir, "RELEASE_NOTES")   # Create one of these if you don't have one
+
+    release = ObjectiveRelease::Release.new
+    release.update_bundle_version(config)
+    release.update_release_notes(release_notes)
+  end
+end
+```
 
 Then from your shell, just run the rake task:
 
@@ -106,3 +108,22 @@ end
 ```
 
 Then just run `rake bump_and_deploy` and sit back and relax while your deployment is run automatically.
+
+### See Also
+
+* The [betabuilder gem](https://github.com/lukeredpath/betabuilder) is awesome for automating deployment of iOS apps
+
+### Contributing
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with Rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+### Copyright
+
+Copyright (c) 2011 Shay Frendt. See LICENSE for details.
+
