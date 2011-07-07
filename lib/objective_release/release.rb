@@ -18,7 +18,7 @@ module ObjectiveRelease
       system "git log --since #{last_deployed_sha} --pretty=oneline > /tmp/commit-log.txt"
       latest_commits = File.read(File.expand_path("/tmp/commit-log.txt"))
       
-      new_release_notes = latest_commits.insert(0, "v#{new_version_number}")
+      new_release_notes = latest_commits.insert(0, "v#{new_version_number}\n\n")
       export_release_notes(release_notes_file, new_release_notes)
     end
     
