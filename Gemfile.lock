@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     objective_release (0.1.4)
-      grit (= 2.4.1)
-      plist (= 3.1.0)
+      grit (~> 2.4.1)
+      plist (~> 3.1.0)
 
 GEM
   remote: http://rubygems.org/

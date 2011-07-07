@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   # Runtime Dependencies
-  s.add_runtime_dependency 'plist', ['3.1.0']
-  s.add_runtime_dependency 'grit', ['2.4.1']
+  s.add_runtime_dependency 'plist', ['~> 3.1.0']
+  s.add_runtime_dependency 'grit', ['~> 2.4.1']
   
   # Development Dependencies
   s.add_development_dependency 'rspec', ['~> 2.6.0']
